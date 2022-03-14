@@ -3,7 +3,10 @@ import java.util.Arrays;
 public class StringMethod {
     public static String reverseString (String original){
         String[] arrayString = original.split("");
-        return Arrays.stream(arrayString).reduce((x, y) -> y + x).orElse(null);
+
+        return Arrays.stream(arrayString)
+                .reduce((x, y) -> y + x)
+                .orElse(null);
     }
 
 //    public static String reverseString (String original){
