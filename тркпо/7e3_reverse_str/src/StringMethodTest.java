@@ -15,6 +15,18 @@ class StringMethodTest {
     }
     @Test
     void reverseStringTest3() {
-        assertEquals(" ", StringMethod.reverseString(" "));
+        assertEquals("тсет", StringMethod.reverseString("тест"));
+    }
+    @Test
+    void isPalindromeTest1() {
+        assertTrue(StringMethod.isPalindrome("Я — арка края"));
+    }
+    @Test
+    void isPalindromeTest2() {
+        assertFalse(StringMethod.isPalindrome("it's not a palindrome"));
+    }
+    @Test
+    void isPalindromeTest3() {
+        assertTrue(StringMethod.isPalindrome("Madam, I’m Adam"));
     }
 }

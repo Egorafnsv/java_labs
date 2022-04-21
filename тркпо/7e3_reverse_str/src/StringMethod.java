@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StringMethod {
     public static String reverseString (String original){
@@ -9,12 +11,14 @@ public class StringMethod {
                 .orElse(null);
     }
 
-//    public static String reverseString (String original){
-//        String[] arrayString = original.split("");
-//        StringBuilder result = new StringBuilder();
-//        for(int i = original.length()-1; i >= 0; i--){
-//            result.append(arrayString[i]);
-//        }
-//        return result.toString();
-//    }
+    public static boolean isPalindrome(String input){
+        input = input.toLowerCase();
+
+        Pattern pattern = Pattern.compile("[^а-яa-z0-9]");
+        Matcher matcher = pattern.matcher(input);
+        input = matcher.replaceAll("");
+
+        String reverse = reverseString(input);
+        return reverse.equals(input);
+    }
 }
